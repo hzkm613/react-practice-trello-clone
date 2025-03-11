@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { Draggable } from 'react-beautiful-dnd'
 import styled from 'styled-components';
 
@@ -16,7 +16,7 @@ interface IDraggableCard {
 
 const DraggableCard = ({toDo, index}: IDraggableCard) => {
   return (
-<Draggable draggableId={toDo} key={toDo} index={index}>
+<Draggable draggableId={toDo} index={index}>
                     {(provided) => (
                       <Card 
                         ref={provided.innerRef} 
@@ -30,4 +30,5 @@ const DraggableCard = ({toDo, index}: IDraggableCard) => {
   )
 }
 
-export default DraggableCard
+//export default memo(DraggableCard);
+export default DraggableCard;
